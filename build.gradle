@@ -1,13 +1,5 @@
-group = 'me.mchernyavsky.sample'
-version = '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'idea'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 buildscript {
+
     repositories {
         jcenter()
         maven {
@@ -24,11 +16,24 @@ plugins {
     id "me.champeau.gradle.jmh" version "0.4.5-beta-2"
 }
 
+apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'me.champeau.gradle.jmh'
 
+repositories {
+    jcenter()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 jmh {
-    include = ['org.openjdk.jmh.samples.JMHSample_01_HelloWorld.*']
+    include = ['org.openjdk.jmh.samples.JMHSample_*']
     iterations = 1
     humanOutputFile = null
     warmupIterations = 1
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.3'
 }
