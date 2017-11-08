@@ -24,13 +24,7 @@
  */
 package org.openjdk.jmh.samples;
 
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.CompilerControl;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -51,10 +45,10 @@ public class JMHSample_16_CompilerControl {
 
     /**
      * These are our targets:
-     *   - first method is prohibited from inlining
-     *   - second method is forced to inline
-     *   - third method is prohibited from compiling
-     *
+     * - first method is prohibited from inlining
+     * - second method is forced to inline
+     * - third method is prohibited from compiling
+     * <p>
      * We might even place the annotations directly to the benchmarked
      * methods, but this expresses the intent more clearly.
      */

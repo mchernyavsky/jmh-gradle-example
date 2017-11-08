@@ -47,7 +47,7 @@ public class JMHSample_25_API_GA {
      * This example shows the rather convoluted, but fun way to exploit
      * JMH API in complex scenarios. Up to this point, we haven't consumed
      * the results programmatically, and hence we are missing all the fun.
-     *
+     * <p>
      * Let's consider this naive code, which obviously suffers from the
      * performance anomalies, since current HotSpot is resistant to make
      * the tail-call optimizations.
@@ -166,6 +166,7 @@ public class JMHSample_25_API_GA {
         /**
          * Select the breeding material.
          * Solutions with better score have better chance to be selected.
+         *
          * @return breed
          */
         public Chromosome selectToBreed() {
@@ -177,7 +178,7 @@ public class JMHSample_25_API_GA {
             double thresh = Math.random() * totalScore;
             for (Chromosome c : list) {
                 if (thresh < 0) return c;
-                thresh =- c.score();
+                thresh = -c.score();
             }
 
             throw new IllegalStateException("Can not choose");

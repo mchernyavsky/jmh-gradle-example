@@ -24,13 +24,7 @@
  */
 package org.openjdk.jmh.samples;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.BenchmarkParams;
 import org.openjdk.jmh.infra.ThreadParams;
 import org.openjdk.jmh.runner.Runner;
@@ -70,7 +64,7 @@ public class JMHSample_31_InfraParams {
     @Setup
     public void setup(BenchmarkParams params) {
         int capacity = 16 * THREAD_SLICE * params.getThreads();
-        mapSingle        = new ConcurrentHashMap<String, String>(capacity, 0.75f, 1);
+        mapSingle = new ConcurrentHashMap<String, String>(capacity, 0.75f, 1);
         mapFollowThreads = new ConcurrentHashMap<String, String>(capacity, 0.75f, params.getThreads());
     }
 

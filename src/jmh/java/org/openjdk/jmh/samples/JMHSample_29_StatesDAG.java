@@ -24,17 +24,7 @@
  */
 package org.openjdk.jmh.samples;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Measurement;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
-import org.openjdk.jmh.annotations.TearDown;
-import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -65,7 +55,7 @@ public class JMHSample_29_StatesDAG {
      * linking @States in directed acyclic graphs (DAGs) by referencing @States
      * in helper method signatures. (Note that {@link org.openjdk.jmh.samples.JMHSample_28_BlackholeHelpers}
      * is just a special case of that.
-     *
+     * <p>
      * Following the interface for @Benchmark calls, all @Setups for
      * referenced @State-s are fired before it becomes accessible to current @State.
      * Similarly, no @TearDown methods are fired for referenced @State before

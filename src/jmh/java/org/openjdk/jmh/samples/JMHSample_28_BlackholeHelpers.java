@@ -24,16 +24,7 @@
  */
 package org.openjdk.jmh.samples;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Measurement;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
-import org.openjdk.jmh.annotations.State;
-import org.openjdk.jmh.annotations.Warmup;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
@@ -57,7 +48,7 @@ public class JMHSample_28_BlackholeHelpers {
      * you can request the black hole straight in the helper method signature.
      * This applies to both @Setup and @TearDown methods, and also to other
      * JMH infrastructure objects, like Control.
-     *
+     * <p>
      * Below is the variant of {@link org.openjdk.jmh.samples.JMHSample_08_DeadCode}
      * test, but wrapped in the anonymous classes.
      */

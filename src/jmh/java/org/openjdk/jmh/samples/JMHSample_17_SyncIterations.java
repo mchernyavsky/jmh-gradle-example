@@ -109,7 +109,7 @@ public class JMHSample_17_SyncIterations {
                 .include(".*" + JMHSample_17_SyncIterations.class.getSimpleName() + ".*")
                 .warmupIterations(1)
                 .measurementIterations(20)
-                .threads(Runtime.getRuntime().availableProcessors()*16)
+                .threads(Runtime.getRuntime().availableProcessors() * 16)
                 .forks(1)
                 .syncIterations(true) // try to switch to "false"
                 .build();
